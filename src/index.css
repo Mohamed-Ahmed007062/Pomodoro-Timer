@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-work-primary: #ba4949;
+  --color-work-secondary: #c15c5c;
+  --color-work-background: #ce5252;
+  
+  --color-shortBreak-primary: #4a7560;
+  --color-shortBreak-secondary: #5a9178;
+  --color-shortBreak-background: #4a7560;
+  
+  --color-longBreak-primary: #457ca3;
+  --color-longBreak-secondary: #4a9dc4;
+  --color-longBreak-background: #457ca3;
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: background-color 0.5s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Timer ring animation */
+@keyframes timer-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.timer-active {
+  animation: timer-pulse 2s ease-in-out infinite;
+}
+
+/* Focus visible styles for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
